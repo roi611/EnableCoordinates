@@ -1,0 +1,10 @@
+name: EnableCoorDinates
+main: roi611\coordinates\Main
+version: 1.0.0
+api:
+- 4.0.0
+- 5.0.0-ALPHA1
+load: POSTWORLD
+author: roi611
+description: 座標表示をonにします
+  
