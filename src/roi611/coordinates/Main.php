@@ -8,7 +8,7 @@ use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\Listener;
 
 use pocketmine\network\mcpe\protocol\GameRulesChangedPacket;
-
+use pocketmine\network\mcpe\protocol\types\BoolGameRule;
 class Main extends PluginBase implements Listener {
 
     public function onEnable():void {
@@ -17,7 +17,7 @@ class Main extends PluginBase implements Listener {
 
     public function onJoin(PlayerJoinEvent $event) {
 
-        $packet = GameRulesChangedPacket::create(["showCoordinates" => (new GameRule)]);
+        $packet = GameRulesChangedPacket::create(["showCoordinates" => (new BoolGameRule(true, true))]);
         $player = $event->getPlayer();
         $session = $player->getNetworkSession();
         $session->sendDataPacket($packet);
